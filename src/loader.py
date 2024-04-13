@@ -1,13 +1,17 @@
-import json
 import argparse
-import os, re,sys
 import glob
+import json
+import os
+import re
+import sys
+from datetime import datetime
+
 import pandas as pd
 from matplotlib import pyplot as plt
-from datetime import datetime
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
+
 # from sklearn.feature_extraction.text import TfidfVectorizer
 
 
