@@ -2,6 +2,7 @@ import os
 
 import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.express as px
 import streamlit as st
 
 # Load data
@@ -43,14 +44,14 @@ elif page == "🔍 EDA":
     plt.hist(traffic_data_df['GlobalRank'], bins=30)
     st.pyplot()
 
-elif page == "😊 Sentiment Analysis":
-    # Sentiment Analysis
-    st.header("😊 Sentiment Analysis")
+elif page == "📰 Article Sentiment":
+    st.header("📰 Article Sentiment Analysis")
+    st.subheader("Sentiment Distribution")
     sentiment_counts = rating_df['title_sentiment'].value_counts()
-    st.bar_chart(sentiment_counts, use_container_width=True)
-    st.write("This bar chart illustrates the distribution of sentiment categories.")
+    fig = px.pie(values=sentiment_counts, names=sentiment_counts.index, title="Sentiment Distribution")
+    st.plotly_chart(fig)
 
 elif page == "📰 Topic Modeling":
     # Topic Modeling
-    st.header("📰 Topic Modeling")
+    st.header("📰 Here is the topic modeling ")
     st.write("Include your topic modeling visualizations here")
